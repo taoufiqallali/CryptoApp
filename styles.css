@@ -82,3 +82,31 @@
 body{
     background-color: rgb(245, 247, 248);
 }
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    
+}
+
+.main-content {
+    background-color:white;
+    width:1100px;
+    min-width: fit-content;
+    height: 75vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+    display: flex;
+}
+
+.main-content div {
+    height: 100%;
+    width: 33%;
+}
+
+.filters, .input{
+    border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+}
+
