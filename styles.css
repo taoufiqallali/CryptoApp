@@ -86,27 +86,96 @@ body{
 .main-container{
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 85vh;
+    justify-content: space-evenly;
+    height: calc(100vh - 75px);
+
     
 }
 
 .main-content {
     background-color:white;
-    width:1100px;
+    width: 70%;
     min-width: fit-content;
-    height: 75vh;
+    height: 95%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px; 
     display: flex;
+    flex-direction: column;
 }
 
-.main-content div {
+
+
+.filters {
+    height: 95%;
+    width: 25%;
+    min-width: fit-content;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+
+.top-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.button-box{
+    height: 80%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    border: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid rgb(15, 43, 70);
+}
+
+.toggle-button{
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    text-align: center;
+    width: 50%;
+    transition: 0.5s;    
+}
+
+
+#btn{
+    position: absolute;
+    left: 0;
+    right: 0;
     height: 100%;
-    width: 33%;
+    width: 50%;
+    background: rgb(15, 43, 70);
+    border-radius: 30px;
+    transition: 0.5s;
 }
 
-.filters, .input{
-    border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+.bottom-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+    width: 100%;
 }
 
+.divider {
+    width: 1px;
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.input, .output{
+    width: calc(50% - 0.5px);
+    height: 100%;
+}
