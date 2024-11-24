@@ -1,11 +1,8 @@
 let btn = document.getElementById('btn');
-let encryptBtn = document.getElementById('encriptBtn');
-let decryptBtn = document.getElementById('decriptBtn');
+let encryptBtn = document.getElementById('encryptBtn');
+let decryptBtn = document.getElementById('decryptBtn');
 
 function leftClick(){
-    encryptBtn.style.color = ""; 
-    decryptBtn.style.color = ""; 
-
 
     btn.style.left = '0%';
     encryptBtn.style.color = 'white';
@@ -14,12 +11,9 @@ function leftClick(){
 }
 
 function rightClick(){
-    encryptBtn.style.color = ""; 
-    decryptBtn.style.color = ""; 
-
-
+   
     btn.style.left = '50%';
     decryptBtn.style.color = 'white';
-    encryptBtn.style.color = '';
+    encryptBtn.style.color = 'black';
 
 }

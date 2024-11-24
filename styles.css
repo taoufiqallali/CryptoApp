@@ -149,6 +149,10 @@ body{
     transition: 0.5s;    
 }
 
+#encryptBtn{
+    color: white;
+}
+
 
 #btn{
     position: absolute;
