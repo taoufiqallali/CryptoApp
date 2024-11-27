@@ -11,15 +11,39 @@
     <nav class="myNav">
         <div class="logo"><a href="index.html">CryptoApp</a></div>
         <ul>
-          <li class="no-style"><a href="about.html">About</a></li>
-          <li class="no-style"><a href="contact.html">Contact</a></li>
+            <li class="no-style"><a href="about.html">About</a></li>
+            <li class="no-style"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <div class="main-container">
-        <div class="filters"></div>
+        <div class="filters">
+            <div class="top-div">
+                encryption options
+            </div>
+            <div class="top-div">
+                <label for="dropdown">algorithm</label>
+                <select id="dropdown" name="dropdown">
+                    <option value="option1">Cesar</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            </div>
+
+            <div id="text-field">
+                <label for="input">Encryption Key:</label>
+                <input type="text" id="input" name="input">
+            </div>
+
+
+
+            <div class="bottom-div2">
+
+            </div>
+        </div>
         <div class="main-content">
-           <div class="top-div">
+            <div class="top-div">
                 <div class="plain-text" id="plain-text">Plain text</div>
                 <div class="button-box">
                     <div id="btn"></div>
@@ -27,14 +51,26 @@
                     <button class="toggle-button" id="decryptBtn" onclick="rightClick()">Decrypt</button>
                 </div>
                 <div class="cypher-text" id="cypher-text">Cypher text</div>
-           </div>
-           <div class="bottom-div">
+            </div>
+            <div class="bottom-div">
                 <div class="input"></div>
                 <div class="divider"></div>
                 <div class="output"></div>
-           </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function toggleTextField() {
+            const dropdown = document.getElementById('dropdown');
+            const textField = document.getElementById('text-field');
+            if (dropdown.value === 'option1') {
+                textField.style.display = 'block';
+            } else {
+                textField.style.display = 'none';
+            }
+        }
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
