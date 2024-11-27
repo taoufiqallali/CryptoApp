@@ -136,7 +136,7 @@ body{
     position: relative;
     border: 30px;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 1px solid rgb(15, 43, 70);
 }
 
@@ -163,7 +163,7 @@ body{
     height: 100%;
     width: 50%;
     background: rgb(15, 43, 70);
-    border-radius: 30px;
+    border-radius: 50px;
     transition: 0.5s;
 }
 
@@ -195,4 +195,8 @@ body{
     height: 80%;
     color: rgb(15, 43, 70);
     
+}
+
+#hiddenDiv {
+    display: none; /* Initially hidden */
 }
