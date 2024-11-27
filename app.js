@@ -8,7 +8,7 @@ const cypher_text = document.getElementById('cypher_text');
 const key = document.getElementById('input');
 
 clear_text.addEventListener('input', () => { cypher_text.textContent = caesarCipher(clear_text.value,key.value) });
-
+key.addEventListener('input', () => { cypher_text.textContent = caesarCipher(clear_text.value, key.value) });
 
 function leftClick(){
 

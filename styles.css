@@ -198,5 +198,5 @@ body{
 }
 
 #hiddenDiv {
-    display: none; /* Initially hidden */
+    display: block; /* Initially hidden */
 }
