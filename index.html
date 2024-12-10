@@ -7,7 +7,7 @@
     <title>CryptoApp</title>
 </head>
 <body>
-
+    <!--              TOP NAV BAR              -->
     <nav class="myNav">
         <div class="logo"><a href="index.html">CryptoApp</a></div>
         <ul>
@@ -15,8 +15,16 @@
             <li class="no-style"><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <!--                                        -->
+
+
+
+
+
 
     <div class="main-container">
+
+        <!--                ENCRYPTION OPTIONS                  -->
         <div class="filters">
             <div class="top-div">
                 encryption options
@@ -24,54 +32,100 @@
             <div class="top-div">
                 <label for="dropdown">algorithm</label>
                 <select id="dropdown" name="dropdown" onchange="toggleDiv()">
-                    <option value="option1">Cesar</option>
-                    <option value="option2">Option 2</option>
+                    <option value="ceasar">Ceasar</option>
+                    <option value="multiplication">multiplication</option>
                     <option value="option3">Option 3</option>
                     <option value="option4">Option 4</option>
                 </select>
             </div>
 
+            <div id="error">err</div>
 
-            <div id="hiddenDiv">
-                <label for="input">Encryption Key</label><br/>
-                <input type="text" id="input" name="input" placeholder="1">
+            <div id="hiddenDivceasar">
+                <label for="input">Encryption Key</label><br />
+
             </div>
 
+
+
+            <div id="hiddenDivmultiplication">
+                <label for="input">Encryption Key</label><br />
+
+            </div>
+            <input type="text" id="input" name="input">
 
 
             <div class="bottom-div2">
 
             </div>
         </div>
+
+        <!--                                                      -->
+
+
+
+
+
+
+
+        <!--                    TEXT INPUT  OUTPUT                                       -->
         <div class="main-content">
+
+
+            <!--                      ECRYPT/DECRYPT BUTTON                                    -->
             <div class="top-div">
-                <div class="plain-text" id="plain-text">Plain text</div>
+                <div class="input-text-label" id="input-text-label">Plain text</div>
                 <div class="button-box">
                     <div id="btn"></div>
                     <button class="toggle-button" id="encryptBtn" onclick="leftClick()">Encrypt</button>
                     <button class="toggle-button" id="decryptBtn" onclick="rightClick()">Decrypt</button>
                 </div>
-                <div class="cypher-text" id="cypher-text">Cypher text</div>
+                <div class="output-text-label" id="output-text-label">Cypher text</div>
             </div>
+            <!--                                                                        -->
+
+
+
+
+            <!--                               INPUT TEXT                                   -->
             <div class="bottom-div">
 
                 <div class="input">
                     
-                    <input type="text" id="clear_text" name="clear_text" placeholder="clear  text">
+                    <input type="text" id="input_text" name="input_text" placeholder="clear  text">
                 </div>
-
+                <!--                                                      -->
 
 
                 <div class="divider"></div>
 
+
+
+                <!--                        OUTPUT TEXT                                  -->
                 <div class="output">
-                    <span id="cypher_text"></span>
+                    <span id="output_text"></span>
 
                 </div>
+                <!--                                                             -->
+
+
 
 
             </div>
         </div>
+        <!--                                                                          -->
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     

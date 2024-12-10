@@ -187,7 +187,7 @@ body{
 }
 
 
-.plain-text, .cypher-text{
+.input-text, .output-text{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,6 +197,18 @@ body{
     
 }
 
-#hiddenDiv {
-    display: block; /* Initially hidden */
+#error {
+    display: none;
+    color:red;
+    opacity:0.5;
 }
+
+
+.hiddenDivceasar {
+    display: none; /* Initially hidden */
+}
+
+[id^="hiddenDiv"] {
+    display: none; /* Initially hidden */
+}
+
