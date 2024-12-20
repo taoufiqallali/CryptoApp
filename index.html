@@ -34,8 +34,7 @@
                 <select id="dropdown" name="dropdown" onchange="toggleDiv()">
                     <option value="ceasar">Ceasar</option>
                     <option value="multiplication">multiplication</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
+                    <option value="affine">affine</option>
                 </select>
             </div>
 
@@ -43,20 +42,31 @@
 
             <div id="hiddenDivceasar">
                 <label for="input">Encryption Key</label><br />
-
+                <input type="text" id="inputceasar" name="inputceasar">
             </div>
 
 
 
             <div id="hiddenDivmultiplication">
                 <label for="input">Encryption Key</label><br />
+                <input type="text" id="inputmultiplication" name="inputmultiplication">
 
             </div>
-            <input type="text" id="input" name="input">
+
+            <div id="hiddenDivaffine">
+                <label for="input">Encryption Key</label><br />
+                <label for="inputaffine_a">a</label>
+                <input type="text" id="inputaffine_a" name="inputaffine_a">
+                
+                <label for="inputaffine_b">b</label>
+                <input type="text" id="inputaffine_b" name="inputaffine_b">
+
+            </div>
+
 
 
             <div class="bottom-div2">
-
+                
             </div>
         </div>
 
@@ -84,7 +94,7 @@
             </div>
             <!--                                                                        -->
 
-
+            
 
 
             <!--                               INPUT TEXT                                   -->
