@@ -29,43 +29,47 @@
             <div class="top-div">
                 encryption options
             </div>
-            <div class="top-div">
-                <label for="dropdown">algorithm</label>
-                <select id="dropdown" name="dropdown" onchange="toggleDiv()">
-                    <option value="ceasar">Ceasar</option>
-                    <option value="multiplication">multiplication</option>
-                    <option value="affine">affine</option>
-                </select>
-            </div>
-
-            <div id="error">err</div>
-
-            <div id="hiddenDivceasar">
-                <label for="input">Encryption Key</label><br />
-                <input type="text" id="inputceasar" name="inputceasar">
-            </div>
-
-
-
-            <div id="hiddenDivmultiplication">
-                <label for="input">Encryption Key</label><br />
-                <input type="text" id="inputmultiplication" name="inputmultiplication">
-
-            </div>
-
-            <div id="hiddenDivaffine">
-                <label for="input">Encryption Key</label><br />
-                <label for="inputaffine_a">a</label>
-                <input type="text" id="inputaffine_a" name="inputaffine_a">
-                
-                <label for="inputaffine_b">b</label>
-                <input type="text" id="inputaffine_b" name="inputaffine_b">
-
-            </div>
-
-
-
             <div class="bottom-div2">
+                <div>
+                    <label for="dropdown">algorithm</label>
+                    <select id="dropdown" name="dropdown" onchange="toggleDiv()">
+                        <option value="ceasar">Ceasar</option>
+                        <option value="multiplication">multiplication</option>
+                        <option value="affine">affine</option>
+                        <option value="Vigenere">Vigenere</option>
+                    </select>
+                </div>
+    
+                <div id="error">err</div>
+    
+                <div id="hiddenDivceasar">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputceasar" name="inputceasar">
+                </div>
+    
+    
+    
+                <div id="hiddenDivmultiplication">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputmultiplication" name="inputmultiplication">
+    
+                </div>
+    
+                <div id="hiddenDivaffine">
+                    <label for="input">Encryption Key</label><br />
+                    <label for="inputaffine_a">a</label>
+                    <input type="text" id="inputaffine_a" name="inputaffine_a">
+                    
+                    <label for="inputaffine_b">b</label>
+                    <input type="text" id="inputaffine_b" name="inputaffine_b">
+    
+                </div>
+    
+                <div id="hiddenDivVigenere">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputVigenere" name="inputVigenere">
+                </div>
+    
                 
             </div>
         </div>
@@ -102,7 +106,7 @@
 
                 <div class="input">
                     
-                    <input type="text" id="input_text" name="input_text" placeholder="clear  text">
+                    <input type="text" id="input_text" name="input_text">
                 </div>
                 <!--                                                      -->
 

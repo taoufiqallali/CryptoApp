@@ -13,7 +13,7 @@ let key_a = "";
 let key_b = "";
 
 // List of supported operations
-const operations = ['ceasar', 'multiplication', 'affine'];
+const operations = ['ceasar', 'multiplication', 'affine', 'Vigenere'];
 toggleDiv(); // Enable Caesar textbox on launch
 
 // Event listener to toggle operation-specific inputs
@@ -79,6 +79,7 @@ function toggleDiv() {
             key_a.addEventListener('input', () => {
                 PROCESS_affine();
             });
+            
 
             key_b = document.getElementById('inputaffine_b');
             key_b.addEventListener('input', () => {
@@ -86,6 +87,15 @@ function toggleDiv() {
             });
 
             PROCESS_affine();
+            break;
+        case ('Vigenere'):
+    key = document.getElementById('inputVigenere');
+    key.addEventListener('input', () => {
+        PROCESS();
+    });
+    PROCESS();
+    break;
+        
 
         default:
             break;
@@ -142,6 +152,31 @@ function caesarBruteForce(text) {
     return result;
 }
 
+function vigenere(text, key) {
+    text = text.toLowerCase(); // Normalize text
+    key = key.toLowerCase();  // Normalize key
+
+    let result = '';
+    let keyIndex = 0;
+
+    for (let i = 0; i < text.length; i++) {
+        let char = text[i];
+
+        if (char >= 'a' && char <= 'z') {
+            let shift = key[keyIndex % key.length].charCodeAt(0) - 'a'.charCodeAt(0);
+            let newChar = String.fromCharCode(((char.charCodeAt(0) - 'a'.charCodeAt(0) + shift) % 26) + 'a'.charCodeAt(0));
+
+            result += newChar;
+            keyIndex++;
+        } else {
+            result += char; // Non-alphabetic characters are preserved
+        }
+    }
+
+    return result;
+}
+
+
 // Process function for Caesar and Multiplication ciphers
 function PROCESS() {
     hideError(); // Clear any existing error messages
@@ -179,6 +214,8 @@ function encrypt(text, key) {
             return caesarCipher(text, key);
         case operations[1]:
             return multiplication(text, key);
+        case operations[3]:
+            return vigenere(text, key);
     }
 }
 
@@ -189,6 +226,8 @@ function decrypt(text, key) {
             return caesarDecrypt(text, key);
         case operations[1]:
             return multiplicationDecrypt(text, key);
+        case operations[1]:
+            return vigenereDecrypt(text, key);
     }
 }
 
