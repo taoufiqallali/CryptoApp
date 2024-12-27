@@ -176,6 +176,34 @@ function vigenere(text, key) {
     return result;
 }
 
+function vigenereDecrypt(text, key) {
+    text = text.toLowerCase(); // Ensure text is lowercase
+    key = key.toLowerCase();   // Ensure key is lowercase
+
+    let decryptedText = '';
+    let keyIndex = 0;
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+
+        if (char >= 'a' && char <= 'z') {
+            const textCharCode = char.charCodeAt(0) - 97; // 'a' -> 0
+            const keyCharCode = key[keyIndex % key.length].charCodeAt(0) - 97; // 'a' -> 0
+
+            const decryptedCharCode = (textCharCode - keyCharCode + 26) % 26 + 97; // Wrap around
+            decryptedText += String.fromCharCode(decryptedCharCode);
+
+            keyIndex++;
+        } else {
+            decryptedText += char;
+        }
+    }
+
+    return decryptedText;
+}
+
+
+
 
 // Process function for Caesar and Multiplication ciphers
 function PROCESS() {
@@ -184,9 +212,15 @@ function PROCESS() {
     if (operation_type == 'ENCRYPT') {
         output_text.textContent = encrypt(input_text.value, key.value);
     } else if (key.value != "") {
+        
         output_text.innerHTML = decrypt(input_text.value, key.value);
-    } else {
+        
+    } else if(selectedOperation == 'Vigenere'){
+        
+        output_text.innerHTML = '';
+    }else{
         output_text.innerHTML = bruteForce(input_text.value, key.value);
+
     }
 }
 
@@ -226,7 +260,7 @@ function decrypt(text, key) {
             return caesarDecrypt(text, key);
         case operations[1]:
             return multiplicationDecrypt(text, key);
-        case operations[1]:
+        case operations[3]:
             return vigenereDecrypt(text, key);
     }
 }
