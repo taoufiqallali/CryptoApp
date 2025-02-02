@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Encryption & Decryption</title>
+    <link rel="stylesheet" href="rsa.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="myNav">
+        <div class="logo"><a href="index.html">CryptoApp</a></div>
+        <ul>
+            <li class="no-style"><a href="rc4.html">RC4</a></li>
+            <li class="no-style"><a href="aes.html">AES</a></li>
+            <li class="no-style"><a href="des.html">DES</a></li>
+            <li class="no-style"><a href="rsa.html">RSA</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h2>RSA Encryption & Decryption</h2>
+        <div class="cards">
+            <!-- Encryption Card -->
+            <div class="card">
+                <h3>Encrypt Text</h3>
+                <label for="plainText">Plain Text:</label>
+                <textarea id="plainText" rows="5"></textarea>
+
+                <label for="publicKey">Public Key:</label>
+                <textarea id="publicKey" rows="3"></textarea>
+
+                <button onclick="encrypt()">Encrypt</button>
+
+                <label for="encryptedText">Encrypted Text:</label>
+                <textarea id="encryptedText" rows="5" readonly></textarea>
+            </div>
+
+            <!-- Decryption Card -->
+            <div class="card">
+                <h3>Decrypt Text</h3>
+                <label for="encryptedInput">Encrypted Text:</label>
+                <textarea id="encryptedInput" rows="5"></textarea>
+
+                <label for="privateKey">Private Key:</label>
+                <textarea id="privateKey" rows="3"></textarea>
+
+                <button onclick="decrypt()">Decrypt</button>
+
+                <label for="decryptedText">Decrypted Text:</label>
+                <textarea id="decryptedText" rows="5" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="rsa.js"></script>
+</body>
+</html>

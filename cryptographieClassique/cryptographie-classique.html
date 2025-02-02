@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cryptographie-classique.css">
+    <title>CryptoApp</title>
+</head>
+<body>
+    <!--              TOP NAV BAR              -->
+    <nav class="myNav">
+        <div class="logo"><a href="index.html">CryptoApp</a></div>
+        <ul>
+            <li class="no-style"><a href="about.html">About</a></li>
+            <li class="no-style"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!--                                        -->
+
+
+
+
+
+
+    <div class="main-container">
+
+        <!--                ENCRYPTION OPTIONS                  -->
+        <div class="filters">
+            <div class="top-div">
+                encryption options
+            </div>
+            <div class="bottom-div2">
+                <div>
+                    <label for="dropdown">algorithm</label>
+                    <select id="dropdown" name="dropdown" onchange="toggleDiv()">
+                        <option value="ceasar">Ceasar</option>
+                        <option value="multiplication">multiplication</option>
+                        <option value="affine">affine</option>
+                        <option value="Vigenere">Vigenere</option>
+                    </select>
+                </div>
+    
+                <div id="error">err</div>
+    
+                <div id="hiddenDivceasar">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputceasar" name="inputceasar">
+                </div>
+    
+    
+    
+                <div id="hiddenDivmultiplication">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputmultiplication" name="inputmultiplication">
+    
+                </div>
+    
+                <div id="hiddenDivaffine">
+                    <label for="input">Encryption Key</label><br />
+                    <label for="inputaffine_a">a</label>
+                    <input type="text" id="inputaffine_a" name="inputaffine_a">
+                    
+                    <label for="inputaffine_b">b</label>
+                    <input type="text" id="inputaffine_b" name="inputaffine_b">
+    
+                </div>
+    
+                <div id="hiddenDivVigenere">
+                    <label for="input">Encryption Key</label><br />
+                    <input type="text" id="inputVigenere" name="inputVigenere">
+                </div>
+    
+                
+            </div>
+        </div>
+
+        <!--                                                      -->
+
+
+
+
+
+
+
+        <!--                    TEXT INPUT  OUTPUT                                       -->
+        <div class="main-content">
+
+
+            <!--                      ECRYPT/DECRYPT BUTTON                                    -->
+            <div class="top-div">
+                <div class="input-text-label" id="input-text-label">Plain text</div>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button class="toggle-button" id="encryptBtn" onclick="leftClick()">Encrypt</button>
+                    <button class="toggle-button" id="decryptBtn" onclick="rightClick()">Decrypt</button>
+                </div>
+                <div class="output-text-label" id="output-text-label">Cypher text</div>
+            </div>
+            <!--                                                                        -->
+
+            
+
+
+            <!--                               INPUT TEXT                                   -->
+            <div class="bottom-div">
+
+                <div class="input">
+                    
+                    <input type="text" id="input_text" name="input_text">
+                </div>
+                <!--                                                      -->
+
+
+                <div class="divider"></div>
+
+
+
+                <!--                        OUTPUT TEXT                                  -->
+                <div class="output">
+                    <span id="output_text"></span>
+
+                </div>
+                <!--                                                             -->
+
+
+
+
+            </div>
+        </div>
+        <!--                                                                          -->
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+   
+    <script src="cryptographie-classique.js"></script>
+</body>
+</html>

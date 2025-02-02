@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Encryption & Decryption</title>
+    <link rel="stylesheet" href="aes.css">
+    <script defer src="aes.js"></script>
+</head>
+<body>
+
+    <nav class="myNav">
+        <div class="logo"><a href="index.html">CryptoApp</a></div>
+        <ul>
+            <li class="no-style"><a href="rc4.html">RC4</a></li>
+            <li class="no-style"><a href="aes.html">AES</a></li>
+            <li class="no-style"><a href="des.html">DES</a></li>
+            <li class="no-style"><a href="rsa.html">RSA</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>AES Encryption & Decryption</h2>
+        <div class="cards">
+            <!-- Encryption Card -->
+            <div class="card">
+                <h3>Encryption</h3>
+                <label for="aesKey">Enter Key (16, 24, 32 chars):</label>
+                <input type="text" id="aesKey">
+
+                <label for="plainText">Enter Text:</label>
+                <textarea id="plainText"></textarea>
+
+                <button onclick="encryptAES()">Encrypt</button>
+
+                <label for="cipherText">Encrypted Text:</label>
+                <textarea id="cipherText" readonly></textarea>
+            </div>
+
+            <!-- Decryption Card -->
+            <div class="card">
+                <h3>Decryption</h3>
+                <label for="decryptKey">Enter Key:</label>
+                <input type="text" id="decryptKey">
+
+                <label for="cipherInput">Enter Encrypted Text:</label>
+                <textarea id="cipherInput"></textarea>
+
+                <button onclick="decryptAES()">Decrypt</button>
+
+                <label for="decryptedText">Decrypted Text:</label>
+                <textarea id="decryptedText" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
