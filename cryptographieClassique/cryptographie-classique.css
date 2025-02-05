@@ -212,3 +212,28 @@ body{
     display: none; /* Initially hidden */
 }
 
+.hiddenDivTransposition{
+    overflow-y: auto;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: auto;
+    max-height: 600px;
+}
+.hiddenDivTransposition table {
+  
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.hiddenDivTransposition th, td {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 16px;
+    width: 50px; /* Adjust for better spacing */
+}
+.hiddenDivTransposition input {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+}

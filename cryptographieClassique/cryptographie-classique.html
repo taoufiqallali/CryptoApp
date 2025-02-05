@@ -9,10 +9,10 @@
 <body>
     <!--              TOP NAV BAR              -->
     <nav class="myNav">
-        <div class="logo"><a href="index.html">CryptoApp</a></div>
+        <div class="logo"><a href="/index.html">CryptoApp</a></div>
         <ul>
-            <li class="no-style"><a href="about.html">About</a></li>
-            <li class="no-style"><a href="contact.html">Contact</a></li>
+            <li class="no-style"><a href="/about.html">About</a></li>
+            <li class="no-style"><a href="/contact.html">Contact</a></li>
         </ul>
     </nav>
     <!--                                        -->
@@ -37,6 +37,7 @@
                         <option value="multiplication">multiplication</option>
                         <option value="affine">affine</option>
                         <option value="Vigenere">Vigenere</option>
+                        <option value="Transposition">Transposition</option>
                     </select>
                 </div>
     
@@ -64,13 +65,34 @@
                     <input type="text" id="inputaffine_b" name="inputaffine_b">
     
                 </div>
-    
+
                 <div id="hiddenDivVigenere">
                     <label for="input">Encryption Key</label><br />
                     <input type="text" id="inputVigenere" name="inputVigenere">
                 </div>
     
                 
+                
+                <div  id="hiddenDivTransposition">
+                    <div class="hiddenDivTransposition">
+                    <label for="input">Encryption Key</label><br />
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Letter</th>
+                                <th>Mapped</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+            
+                    </table>
+                </div>
+                    <button onclick="randomizeRow()">Randomize</button>
+                </div>
+
+
+
+
             </div>
         </div>
 

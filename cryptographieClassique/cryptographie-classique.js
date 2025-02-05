@@ -12,8 +12,15 @@ let selectedOperation = 'ceasar'; // Default selected operation
 let key_a = "";
 let key_b = "";
 
+
+//values for Transposition
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const tableBody = document.getElementById('tableBody');
+
+createTable();
 // List of supported operations
-const operations = ['ceasar', 'multiplication', 'affine', 'Vigenere'];
+const operations = ['ceasar', 'multiplication', 'affine', 'Vigenere', 'Transposition'];
 toggleDiv(); // Enable Caesar textbox on launch
 
 // Event listener to toggle operation-specific inputs
@@ -79,23 +86,27 @@ function toggleDiv() {
             key_a.addEventListener('input', () => {
                 PROCESS_affine();
             });
-            
-
             key_b = document.getElementById('inputaffine_b');
             key_b.addEventListener('input', () => {
                 PROCESS_affine();
             });
-
             PROCESS_affine();
             break;
         case ('Vigenere'):
-    key = document.getElementById('inputVigenere');
-    key.addEventListener('input', () => {
-        PROCESS();
-    });
-    PROCESS();
-    break;
-        
+            key = document.getElementById('inputVigenere');
+            key.addEventListener('input', () => {
+                PROCESS();
+            });
+            PROCESS();
+            break;
+        case ('Transposition'):
+            if (operation_type == 'ENCRYPT'){
+                output_text.textContent = Transposition(input_text.value);
+            }else{
+                output_text.textContent = DecryptTransposition(input_text.value);
+            }
+            
+            break;
 
         default:
             break;
@@ -155,7 +166,14 @@ function caesarBruteForce(text) {
 function vigenere(text, key) {
     text = text.toLowerCase(); // Normalize text
     key = key.toLowerCase();  // Normalize key
+    errors=0;
 
+    key2 = key.toUpperCase();
+    for(let k of key2){
+        if(!alphabet.includes(k)){errors++;}
+    }
+    if(errors==0){hideError();}else{showError('valeurs de cles non alphabetiques');}
+    
     let result = '';
     let keyIndex = 0;
 
@@ -164,6 +182,7 @@ function vigenere(text, key) {
 
         if (char >= 'a' && char <= 'z') {
             let shift = key[keyIndex % key.length].charCodeAt(0) - 'a'.charCodeAt(0);
+
             let newChar = String.fromCharCode(((char.charCodeAt(0) - 'a'.charCodeAt(0) + shift) % 26) + 'a'.charCodeAt(0));
 
             result += newChar;
@@ -203,8 +222,6 @@ function vigenereDecrypt(text, key) {
 }
 
 
-
-
 // Process function for Caesar and Multiplication ciphers
 function PROCESS() {
     hideError(); // Clear any existing error messages
@@ -212,13 +229,13 @@ function PROCESS() {
     if (operation_type == 'ENCRYPT') {
         output_text.textContent = encrypt(input_text.value, key.value);
     } else if (key.value != "") {
-        
+
         output_text.innerHTML = decrypt(input_text.value, key.value);
-        
-    } else if(selectedOperation == 'Vigenere'){
-        
+
+    } else if (selectedOperation == 'Vigenere') {
+
         output_text.innerHTML = '';
-    }else{
+    } else {
         output_text.innerHTML = bruteForce(input_text.value, key.value);
 
     }
@@ -250,6 +267,8 @@ function encrypt(text, key) {
             return multiplication(text, key);
         case operations[3]:
             return vigenere(text, key);
+        case operations[4]:
+            return Transposition(text);
     }
 }
 
@@ -262,6 +281,8 @@ function decrypt(text, key) {
             return multiplicationDecrypt(text, key);
         case operations[3]:
             return vigenereDecrypt(text, key);
+        case operations[4]:
+            return DecryptTransposition(text);
     }
 }
 
@@ -505,4 +526,96 @@ function regulate26(key) {
         return key;
     }
     else { return 0; }
-} 
+}
+function createTable() {
+    alphabet.forEach(letter => {
+        let tr = document.createElement('tr');
+
+        let th = document.createElement('th');
+        th.textContent = letter;
+        tr.appendChild(th);
+
+        let td = document.createElement('td');
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.maxLength = 1;
+        input.value = letter;
+        input.oninput = enforceUnique;
+        td.appendChild(input);
+        tr.appendChild(td);
+
+        tableBody.appendChild(tr);
+    });
+
+}
+
+function randomizeRow() {
+    let shuffled = [...alphabet].sort(() => Math.random() - 0.5);
+    let inputs = tableBody.getElementsByTagName('input');
+    for (let i = 0; i < 26; i++) {
+        inputs[i].value = shuffled[i];
+    }
+    toggleDiv();
+
+}
+
+
+function enforceUnique(event) {
+    errors=0;
+    let inputs = Array.from(tableBody.getElementsByTagName('input'));
+    let seen = new Set();
+    permTable = inputs.map(input => input.value);
+    inputs.forEach(input => {
+        let value = input.value.toUpperCase();
+        if (value && seen.has(value)) {
+            showError('lettre doubler  '+value);
+            errors++;
+        } else {
+            seen.add(value);
+        }
+    });
+    if(errors==0){hideError();}
+
+    toggleDiv();
+}
+
+function Transposition(text) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    cleartext = text.toUpperCase();  // Clean input, remove non-alphabet characters
+    let inputs = Array.from(tableBody.getElementsByTagName('input'));
+    permTable = inputs.map(input => input.value);
+    let cipherText = '';
+    for (let i = 0; i < cleartext.length; i++) {
+        let char = cleartext[i];
+        if (alphabet.includes(char)) {
+            let index = alphabet.indexOf(char);
+            if (index !== -1) {
+                cipherText += permTable[index];
+            }
+        }
+        else { cipherText += char; }
+    }
+    return cipherText;
+}
+
+function DecryptTransposition(text) {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    cleartext = text.toUpperCase();  // Clean input, remove non-alphabet characters
+    let inputs = Array.from(tableBody.getElementsByTagName('input'));
+    permTable = inputs.map(input => input.value);
+    let cipherText = '';
+
+    for (let i = 0; i < cleartext.length; i++) {
+        let char = cleartext[i];
+        if (alphabet.includes(char)) {
+            let index = permTable.indexOf(char);
+            if (index !== -1) {
+                cipherText += alphabet[index];
+            }
+        }
+
+        else { cipherText += char; }
+    }
+
+    return cipherText;
+}
