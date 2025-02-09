@@ -80,8 +80,8 @@
 
 /* Cards Layout */
 .cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
     gap: 20px;
     margin-top: 10px;
 }
@@ -91,8 +91,16 @@
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 45%;
     text-align: center;
+}
+
+/* Optional: Make the third card span both columns */
+.card:nth-child(3) { /* Select the third card */
+    width: 60%; /* Reduced width */
+    height: 300px; /* Reduced height (adjust as needed) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+    /* Add any other specific styles for the 3rd card here */
+    grid-column: 1 / 3; /* Span from column 1 to 3 (takes both columns) */
 }
 
 /* Labels & Inputs */
@@ -113,7 +121,7 @@ input, textarea {
 }
 
 textarea {
-    height: 80px; /* Reduced height */
+    height: 20%; /* Reduced height */
     resize: none;
 }
 
@@ -133,14 +141,50 @@ button:hover {
     background-color: rgb(34, 46, 67);
 }
 
-/* Responsive */
+/* Responsive (adjust as needed) */
 @media (max-width: 768px) {
     .cards {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr; /* One column on smaller screens */
     }
-
     .card {
-        width: 90%;
+        width: 90%; /* Adjust width for smaller screens */
     }
+    .card:nth-child(3) { /* Third card no longer needs to span columns */
+        width: 70%;  /* Adjust width for 3rd card on smaller screens */
+        height: auto; /* Or a specific height if you still want one */
+    }
+}
+
+
+.container_K {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container_K textarea{
+ 
+    height: 35px; /* Reduced height */
+    resize: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust spacing between buttons */
+    justify-content: center; /* Centers the buttons horizontally */
+    margin-top: 10px;
 }

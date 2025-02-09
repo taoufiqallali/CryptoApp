@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSA Encryption & Decryption</title>
     <link rel="stylesheet" href="rsa.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="myNav">
@@ -28,10 +30,14 @@
                 <label for="plainText">Plain Text:</label>
                 <textarea id="plainText" rows="5"></textarea>
 
-                <label for="publicKey">Public Key:</label>
-                <textarea id="publicKey" rows="3"></textarea>
+                <div class="button-container">
+                    <label for="publickey">Public Key (e): </label>
+                    <textarea id="publickey" rows="3"></textarea>
+                    <label for="Key_p">Key (n):</label>
+                    <textarea id="Key_pub" rows="3"></textarea>
+                </div>
 
-                <button onclick="encrypt()">Encrypt</button>
+                <button onclick="H_encrypt()">Encrypt</button>
 
                 <label for="encryptedText">Encrypted Text:</label>
                 <textarea id="encryptedText" rows="5" readonly></textarea>
@@ -42,18 +48,46 @@
                 <h3>Decrypt Text</h3>
                 <label for="encryptedInput">Encrypted Text:</label>
                 <textarea id="encryptedInput" rows="5"></textarea>
-
-                <label for="privateKey">Private Key:</label>
-                <textarea id="privateKey" rows="3"></textarea>
-
-                <button onclick="decrypt()">Decrypt</button>
+                <div class="button-container">
+                    <label for="privateKey">Private Key (d):</label>
+                    <textarea id="privateKey" rows="3"></textarea>
+                    <label for="Key_pri">Key (n):</label>
+                    <textarea id="Key_pri" rows="3"></textarea>
+                </div>
+                <button onclick="H_decrypt()">Decrypt</button>
 
                 <label for="decryptedText">Decrypted Text:</label>
                 <textarea id="decryptedText" rows="5" readonly></textarea>
+            </div>
+
+            <!-- Key pair generation -->
+            <div class="card">
+                <h3>génération de clés</h3>
+                <div class="container_K">
+                    <div class="top-section">
+                        
+                        <label for="publicKey_G">Public Key (e):</label>
+                        <textarea id="publicKey_G" readonly></textarea>
+
+                        <label for="privateKey_G">Private Key (d):</label>
+                        <textarea id="privateKey_G" readonly></textarea>
+
+                    </div>
+
+                    <div class="bottom-section">
+                        <label for="key_G">Key (n):</label>
+                        <textarea id="key_G" readonly></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button id="generateKey" onclick="Generate_keys()">Generate Key</button>
+                        <button id="copy" onclick="copy_keys()">Copy</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="rsa.js"></script>
 </body>
+
 </html>
