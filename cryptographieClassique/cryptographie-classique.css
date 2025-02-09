@@ -14,25 +14,25 @@
     height: 70px;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 0; 
+    top: 0;
     z-index: 1000;
 }
 
-.myNav .logo{
+.myNav .logo {
     color: rgb(34, 46, 67);
     font-size: 30px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
 }
 
-.myNav ul{
+.myNav ul {
     display: flex;
     list-style: none;
 }
 
-.myNav ul li{
+.myNav ul li {
     position: relative;
     padding: 0px;
     margin-left: 30px;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px; 
+    height: 35px;
     font-size: larger;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 0;
@@ -48,20 +48,20 @@
 }
 
 .myNav ul li a:link,
-.myNav ul li  a:visited , 
-.myNav ul li  a:hover, 
-.myNav ul li a:active { 
-    text-decoration: none; 
+.myNav ul li a:visited,
+.myNav ul li a:hover,
+.myNav ul li a:active {
+    text-decoration: none;
     color: rgb(15, 43, 70);
-} 
+}
 
 .myNav .logo a:link,
-.myNav .logo  a:visited , 
-.myNav .logo  a:hover, 
-.myNav .logo a:active { 
-    text-decoration: none; 
+.myNav .logo a:visited,
+.myNav .logo a:hover,
+.myNav .logo a:active {
+    text-decoration: none;
     color: rgb(15, 43, 70);
-} 
+}
 
 .myNav ul li::after {
     content: "";
@@ -69,38 +69,42 @@
     bottom: 1px;
     left: 0;
     width: 0;
-    height: 3px; /* Height of the underline bar */
-    background-color: rgb(15, 43, 70); /* Color of the bar */
-    transition: width 0.3s ease; /* Smooth transition for the bar */
+    height: 3px;
+    /* Height of the underline bar */
+    background-color: rgb(15, 43, 70);
+    /* Color of the bar */
+    transition: width 0.3s ease;
+    /* Smooth transition for the bar */
 }
 
 .myNav ul li:hover::after {
-    width: 100%; /* Expands the bar to full width on hover */
+    width: 100%;
+    /* Expands the bar to full width on hover */
 }
 
 
 
 
-body{
+body {
     background-color: rgb(245, 247, 248);
 }
 
-.main-container{
+.main-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     height: calc(100vh - 75px);
 
-    
+
 }
 
 .main-content {
-    background-color:white;
+    background-color: white;
     width: 70%;
     min-width: fit-content;
     height: 95%;
     box-shadow: 0 4px 8px 5px rgba(53, 5, 5, 0.384);
-    border-radius: 10px; 
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -132,7 +136,7 @@ body{
     box-shadow: 0 2px 4px rgba(7, 2, 2, 0.116)
 }
 
-.button-box{
+.button-box {
     height: 80%;
     width: 200px;
     display: flex;
@@ -145,13 +149,13 @@ body{
     border: 1px solid rgb(15, 43, 70);
 }
 
-.toggle-button{
+.toggle-button {
     font-family: "Fira Code", Consolas, "Courier New", monospace;
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
     text-align: center;
     text-shadow: 0 0 5px rgba(255, 81, 0, 0.356), 0 0 10px rgba(255, 17, 0, 0.377), 0 0 20px rgba(255, 17, 0, 0.336);
-    -webkit-background-clip:border-box;
+    -webkit-background-clip: border-box;
     -webkit-text-fill-color: currentColor;
     cursor: pointer;
     background: transparent;
@@ -160,16 +164,16 @@ body{
     position: relative;
     text-align: center;
     width: 50%;
-    transition: 0.5s;    
+    transition: 0.5s;
 }
 
 
-#encryptBtn{
+#encryptBtn {
     color: white;
 }
 
 
-#btn{
+#btn {
     position: absolute;
     left: 0;
     right: 0;
@@ -181,9 +185,20 @@ body{
 }
 
 .bottom-div {
+    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 90%;
+
+    width: 100%;
+}
+
+.bottom-div2 {
+    margin: 20px;
+    justify-content: space-between;
+    align-items: top center;
+
     height: 90%;
     width: 100%;
 }
@@ -194,56 +209,70 @@ body{
     background-color: lightgrey;
 }
 
-.input, .output{
+.input,
+.output {
     width: calc(50% - 0.5px);
     height: 100%;
 }
 
 
-.input-text, .output-text{
+.input-text,
+.output-text {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 25%;
     height: 80%;
     color: rgb(15, 43, 70);
-    
+
 }
 
 #error {
     display: none;
-    color:red;
-    opacity:0.5;
+    color: red;
+    opacity: 0.5;
 }
 
 
-.hiddenDivceasar {
-    display: none; /* Initially hidden */
-}
 
 [id^="hiddenDiv"] {
-    display: none; /* Initially hidden */
-}
-
-.hiddenDivPermutation{
+    display: none;
+    /* Initially hidden */
     overflow-y: auto;
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 300px;
+    /* Adjust as needed */
+    margin: 20px;
+    max-height: 600px;
+    justify-content: space-between;
+
+}
+
+.hiddenDivPermutation {
+    overflow-y: auto;
+    width: 100%;
+    max-width: 300px;
+    /* Adjust as needed */
     margin: auto;
     max-height: 600px;
 }
+
 .hiddenDivPermutation table {
-  
+
     width: 100%;
     border-collapse: collapse;
     text-align: center;
 }
-.hiddenDivPermutation th, td {
+
+.hiddenDivPermutation th,
+td {
     border: 1px solid black;
     padding: 5px;
     font-size: 16px;
-    width: 50px; /* Adjust for better spacing */
+    width: 50px;
+    /* Adjust for better spacing */
 }
+
 .hiddenDivPermutation input {
     width: 100%;
     text-align: center;
@@ -252,89 +281,188 @@ body{
 }
 
 
-.hiddenDivTransposition{
+.hiddenDivTransposition {
     overflow-y: auto;
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 300px;
+    /* Adjust as needed */
     margin: auto;
     max-height: 600px;
 }
+
 .hiddenDivTransposition table {
-  
+
     width: 100%;
     border-collapse: collapse;
     text-align: center;
 }
-.hiddenDivTransposition th, td {
+
+.hiddenDivTransposition th,
+td {
     border: 1px solid black;
     padding: 5px;
     font-size: 16px;
-    width: 50px; /* Adjust for better spacing */
+    width: 50px;
+    /* Adjust for better spacing */
 }
+
 .hiddenDivTransposition input {
     width: 100%;
     text-align: center;
     font-size: 16px;
     border: none;
 }
+
 /* Dropdown container */
 .dropdown {
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
+    max-width: 300px;
+    /* Adjust as needed */
     margin: 10px 0;
-  }
-  
-  /* Label styling */
-  .dropdown label {
-    
-   
+}
+
+/* Label styling */
+.dropdown label {
+
+
     display: block;
     margin-bottom: 5px;
     font-size: 25px;
     color: #333;
     font-weight: bold;
-  }
-  
-  /* Select element styling */
-  .dropdown select {
+}
+
+/* Select element styling */
+.dropdown select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid rgb(48, 24, 24);
     border-radius: 5px;
     background-color: #fff;
-    appearance: none; /* Remove default arrow */
-    -webkit-appearance: none; /* Remove default arrow for Safari */
-    -moz-appearance: none; /* Remove default arrow for Firefox */
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    /* Remove default arrow for Safari */
+    -moz-appearance: none;
+    /* Remove default arrow for Firefox */
     cursor: pointer;
     transition: border-color 0.3s ease;
     text-align: center;
 
-  }
-  
-  /* Custom dropdown arrow */
-  .dropdown::after {
+}
+
+/* Custom dropdown arrow */
+.dropdown::after {
     content: "▼";
     position: absolute;
     top: 70%;
     right: 20px;
     transform: translateY(-50%);
-    pointer-events: none; /* Ensure clicks pass through to the select element */
+    pointer-events: none;
+    /* Ensure clicks pass through to the select element */
     color: #666;
-  }
-  
-  /* Hover and focus effects */
-  .dropdown select:hover,
-  .dropdown select:focus {
-    border-color: #4CAF50; /* Green border on hover/focus */
-    outline: none; /* Remove default focus outline */
-  }
-  
-  /* Dropdown options styling */
-  .dropdown select option {
+}
+
+/* Hover and focus effects */
+.dropdown select:hover,
+.dropdown select:focus {
+    border-color: #4CAF50;
+    /* Green border on hover/focus */
+    outline: none;
+    /* Remove default focus outline */
+}
+
+/* Dropdown options styling */
+.dropdown select option {
     padding: 10px;
     background-color: #fff;
     color: #333;
-  }
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #504f2175;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+textarea {
+    width: 90%;
+    min-height: 40px;
+    /* Default height */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    /* Prevent manual resizing */
+    overflow: hidden;
+    /* Hide unnecessary scrollbars */
+    transition: all 0.2s ease-in-out;
+    max-width: 90%;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.output {
+
+    width: 100%;
+    margin: 70px;
+    display: block;
+    /* Make it behave like a textarea */
+    max-width: 600px;
+    min-height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f716160c;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    /* Prevent manual resizing */
+    overflow: hidden;
+    /* Hide unnecessary scrollbars */
+    transition: all 0.2s ease-in-out;
+    white-space: pre-wrap;
+    /* Preserve line breaks */
+    word-wrap: break-word;
+    /* Ensure words don't overflow */
+
+}
+
+.output:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.Transposition_size {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #504f2175;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
