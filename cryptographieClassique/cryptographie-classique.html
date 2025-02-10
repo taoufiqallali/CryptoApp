@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -9,204 +9,137 @@
 </head>
 
 <body>
-    <!--              TOP NAV BAR              -->
     <nav class="myNav">
         <div class="logo"><a href="../index.html">CryptoApp</a></div>
         <ul>
-            <li class="no-style"><a href="../about.html">About</a></li>
+            <li class="no-style"><a href="../about.html">À propos</a></li>
             <li class="no-style"><a href="../contact.html">Contact</a></li>
         </ul>
     </nav>
-    <!--                                        -->
-
-
-
-
-
 
     <div class="main-container">
-
-        <!--                ENCRYPTION OPTIONS                  -->
         <div class="filters">
             <div class="top-div">
-                encryption options
+                Options de chiffrement
             </div>
             <div class="bottom-div2">
                 <div class="dropdown">
-                    <label for="dropdown">algorithm</label>
+                    <label for="dropdown">Algorithme</label>
                     <select id="dropdown" name="dropdown" onchange="toggleDiv();hideError();">
-                        <option value="ceasar">Ceasar</option>
-                        <option value="multiplication">multiplication</option>
-                        <option value="affine">affine</option>
-                        <option value="Vigenere">Vigenere</option>
+                        <option value="ceasar">César</option>
+                        <option value="multiplication">Multiplication</option>
+                        <option value="affine">Affine</option>
+                        <option value="Vigenere">Vigenère</option>
                         <option value="Permutation">Permutation</option>
                         <option value="Transposition">Transposition</option>
                         <option value="Hill">Hill</option>
                     </select>
                 </div>
 
-                <div id="error">err</div>
+                <div id="error"></div>
 
                 <div id="hiddenDivceasar">
                     <br />
-                    <label for="input">Clé de cryptage</label>
+                    <label for="input">Clé de chiffrement</label>
                     <input type="text" id="inputceasar" name="inputceasar">
                 </div>
 
-
-
                 <div id="hiddenDivmultiplication">
                     <br />
-                    <label for="input">Clé de cryptage</label>
+                    <label for="input">Clé de chiffrement</label>
                     <input type="text" id="inputmultiplication" name="inputmultiplication">
-
                 </div>
 
                 <div id="hiddenDivaffine">
                     <br />
-                    <label for="input">Clé de cryptage</label>
+                    <label for="input">Clé de chiffrement</label>
                     <label for="inputaffine_a">a</label>
                     <input type="text" id="inputaffine_a" name="inputaffine_a">
 
                     <label for="inputaffine_b">b</label>
                     <input type="text" id="inputaffine_b" name="inputaffine_b">
-
                 </div>
 
                 <div id="hiddenDivVigenere">
                     <br />
-                    <label for="input">Clé de cryptage</label>
+                    <label for="input">Clé de chiffrement</label>
                     <input type="text" id="inputVigenere" name="inputVigenere">
                 </div>
 
-
-
                 <div id="hiddenDivPermutation">
+                    <button class="rand_button" onclick="randomizeRow()">Aléatoire</button>
                     <div class="hiddenDivPermutation">
                         <br />
-                    <label for="input">Clé de cryptage</label>
+                        <label for="input">Clé de chiffrement</label>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Letter</th>
-                                    <th>Mapped</th>
+                                    <th>Lettre</th>
+                                    <th>Correspondance</th>
                                 </tr>
                             </thead>
                             <tbody id="PermutationTableBody"></tbody>
-
                         </table>
                     </div>
-                    <button onclick="randomizeRow()">Randomize</button>
+                    
                 </div>
 
-
-
                 <div id="hiddenDivTransposition">
+                    <button class="rand_button" onclick="TranspositionRandomizeRow()">Aléatoire</button>
+
                     <div class="hiddenDivTransposition">
                         <br />
-                    <label for="input">Clé de cryptage</label>
+                        <label for="input">Taille de Clé de chiffrement</label>
                         <input type="number" class="Transposition_size" onchange="TranspositioncreateTable()" value=6
                             id="TranspositionKeySize"></input>
+                            <br/><br/>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Letter</th>
-                                    <th>Mapped</th>
+                                    <th>Lettre</th>
+                                    <th>Correspondance</th>
                                 </tr>
                             </thead>
                             <tbody id="TranspositionTableBody"></tbody>
-
                         </table>
                     </div>
-                    <button onclick="TranspositionRandomizeRow()">Randomize</button>
                 </div>
 
-                <div id="hiddenDivHill">
-
-                    <br />
-                    <label for="input">Clé de cryptage</label>
+                <div class ="hiddenDivHill" id="hiddenDivHill">
+                    <button class="rand_button" onclick="fillMatrixWithRandomValues()">Matrice aléatoire</button>
+ <br/> <br/>
                     <label for="size">Taille de Matrice (2-6): </label>
-                    <input type="number" id="size" min="2" max="6" value="3" onchange="generateMatrix()">
-
-                    <div id="matrix-container"></div>
-                    <button onclick="fillMatrixWithRandomValues()">Randomize Matrix</button>
-
+                    <input type="number" class="Transposition_size" id="size" min="2" max="6" value="3" onchange="generateMatrix()">
+                    <br/> <br/>
+                    <div class="matrix-container" id="matrix-container"></div>
                 </div>
-
-
-
             </div>
         </div>
 
-        <!--                                                      -->
-
-
-
-
-
-
-
-        <!--                    TEXT INPUT  OUTPUT                                       -->
         <div class="main-content">
-
-
-            <!--                      ECRYPT/DECRYPT BUTTON                                    -->
             <div class="top-div">
-                <div class="input-text-label" id="input-text-label">Plain text</div>
+                <div class="input-text-label" id="input-text-label">Texte clair</div>
                 <div class="button-box">
                     <div id="btn"></div>
-                    <button class="toggle-button" id="encryptBtn" onclick="leftClick()">Encrypt</button>
-                    <button class="toggle-button" id="decryptBtn" onclick="rightClick()">Decrypt</button>
+                    <button class="toggle-button" id="encryptBtn" onclick="leftClick()">Chiffrer</button>
+                    <button class="toggle-button" id="decryptBtn" onclick="rightClick()">Déchiffrer</button>
                 </div>
-                <div class="output-text-label" id="output-text-label">Cypher text</div>
+                <div class="output-text-label" id="output-text-label">Texte chiffré</div>
             </div>
-            <!--                                                                        -->
 
-
-
-
-            <!--                               INPUT TEXT                                   -->
             <div class="bottom-div">
-
                 <div class="input">
-
-                    <textarea  type="text" id="input_text" name="input_text"></textarea>
+                    <textarea type="text" id="input_text" name="input_text"></textarea>
                 </div>
-                <!--                                                      -->
-
 
                 <div class="divider"></div>
 
-
-
-                <!--                        OUTPUT TEXT                                  -->
                 <div class="output">
                     <span id="output_text"></span>
-
                 </div>
-                <!--                                                             -->
-
-
-
-
             </div>
         </div>
-        <!--                                                                          -->
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
 
     <script src="cryptographie-classique.js"></script>
 </body>

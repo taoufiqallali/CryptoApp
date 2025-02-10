@@ -118,6 +118,7 @@ body {
     background-color: white;
     box-shadow: 0 4px 8px 5px rgba(13, 29, 3, 0.342);
     border-radius: 10px;
+  
 }
 
 
@@ -151,10 +152,10 @@ body {
 
 .toggle-button {
     font-family: "Fira Code", Consolas, "Courier New", monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgb(0, 0, 0);
     text-align: center;
-    text-shadow: 0 0 5px rgba(255, 81, 0, 0.356), 0 0 10px rgba(255, 17, 0, 0.377), 0 0 20px rgba(255, 17, 0, 0.336);
+    text-shadow: 0 0 5px rgba(255, 81, 0, 0.103), 0 0 10px rgba(255, 17, 0, 0.377), 0 0 20px rgba(255, 17, 0, 0.336);
     -webkit-background-clip: border-box;
     -webkit-text-fill-color: currentColor;
     cursor: pointer;
@@ -185,6 +186,7 @@ body {
 }
 
 .bottom-div {
+    
     margin: 20px;
     display: flex;
     justify-content: space-between;
@@ -195,6 +197,7 @@ body {
 }
 
 .bottom-div2 {
+    box-sizing: border-box;
     margin: 20px;
     justify-content: space-between;
     align-items: top center;
@@ -249,7 +252,7 @@ body {
 }
 
 .hiddenDivPermutation {
-    overflow-y: auto;
+
     width: 100%;
     max-width: 300px;
     /* Adjust as needed */
@@ -264,17 +267,19 @@ body {
     text-align: center;
 }
 
-.hiddenDivPermutation th,
-td {
+.hiddenDivPermutation th,td,tr {
     border: 1px solid black;
     padding: 5px;
     font-size: 16px;
     width: 50px;
     /* Adjust for better spacing */
 }
-
+.hiddenDivPermutation tr{
+    max-height: 1px; /* Example height */
+}
 .hiddenDivPermutation input {
-    width: 100%;
+    height: 20px;
+    width: 50%;
     text-align: center;
     font-size: 16px;
     border: none;
@@ -420,35 +425,38 @@ textarea:focus {
 }
 
 .output {
-
     width: 100%;
-    margin: 70px;
-    display: block;
-    /* Make it behave like a textarea */
     max-width: 600px;
-    min-height: 40px;
+    margin: 0 auto; /* Centers the element horizontally */
+    display: block; /* Ensure it's a block-level element */
+    min-height: 40px; /* Or adjust as needed */
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #f716160c;
+    border: 1px solid #ced4da; /* A more subtle border color */
     border-radius: 8px;
-    outline: none;
-    resize: none;
-    /* Prevent manual resizing */
-    overflow: hidden;
-    /* Hide unnecessary scrollbars */
-    transition: all 0.2s ease-in-out;
-    white-space: pre-wrap;
-    /* Preserve line breaks */
-    word-wrap: break-word;
-    /* Ensure words don't overflow */
-
+    /* Remove resize, overflow, white-space, word-wrap */
+    /* Let the span's content determine the height */
+    /* margin removed */
+    box-sizing: border-box; /* Ensures padding is included in width */
+    display: flex; /* Use flexbox for better content handling */
+    align-items: flex-start; /* Align content to the top */
+    white-space: pre-wrap; /* Preserve line breaks */
+    word-wrap: break-word; /* Ensure words don't overflow */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .output:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    border-color: #80bdff; /* Updated border color */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Updated box shadow */
 }
 
+#output_text {
+    flex-grow: 1; /* span takes up available space */
+    /* optional to prevent even longer words from breaking out of the box */
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
 label {
     font-size: 16px;
     font-weight: 600;
@@ -458,7 +466,48 @@ label {
 }
 
 .Transposition_size {
-    width: 100%;
+    background-color: #6b798827;
+    border-color: #24120e;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #504f2175;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.rand_button {
+
+    text-decoration: none;
+    color: white;
+    background-color: rgb(15, 43, 70);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.rand_button:hover {
+    cursor: pointer;
+    background-color: rgb(12, 51, 119);
+}
+
+.matrix-container input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 12px;
+}
+
+.matrix-container input[type="number"]::-webkit-inner-spin-button,
+.matrix-container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Transposition_size {
+    background-color: #6b798827;
+    border-color: #24120e;
+    width: 80%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #504f2175;

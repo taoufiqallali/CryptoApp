@@ -13,25 +13,25 @@
     height: 70px;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 0; 
+    top: 0;
     z-index: 1000;
 }
 
-.myNav .logo{
+.myNav .logo {
     color: rgb(34, 46, 67);
     font-size: 30px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
 }
 
-.myNav ul{
+.myNav ul {
     display: flex;
     list-style: none;
 }
 
-.myNav ul li{
+.myNav ul li {
     position: relative;
     padding: 0px;
     margin-left: 30px;
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px; 
+    height: 35px;
     font-size: larger;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 0;
@@ -47,20 +47,20 @@
 }
 
 .myNav ul li a:link,
-.myNav ul li  a:visited , 
-.myNav ul li  a:hover, 
-.myNav ul li a:active { 
-    text-decoration: none; 
+.myNav ul li a:visited,
+.myNav ul li a:hover,
+.myNav ul li a:active {
+    text-decoration: none;
     color: rgb(15, 43, 70);
-} 
+}
 
 .myNav .logo a:link,
-.myNav .logo  a:visited , 
-.myNav .logo  a:hover, 
-.myNav .logo a:active { 
-    text-decoration: none; 
+.myNav .logo a:visited,
+.myNav .logo a:hover,
+.myNav .logo a:active {
+    text-decoration: none;
     color: rgb(15, 43, 70);
-} 
+}
 
 .myNav ul li::after {
     content: "";
@@ -68,13 +68,17 @@
     bottom: 1px;
     left: 0;
     width: 0;
-    height: 3px; /* Height of the underline bar */
-    background-color: rgb(15, 43, 70); /* Color of the bar */
-    transition: width 0.3s ease; /* Smooth transition for the bar */
+    height: 3px;
+    /* Height of the underline bar */
+    background-color: rgb(15, 43, 70);
+    /* Color of the bar */
+    transition: width 0.3s ease;
+    /* Smooth transition for the bar */
 }
 
 .myNav ul li:hover::after {
-    width: 100%; /* Expands the bar to full width on hover */
+    width: 100%;
+    /* Expands the bar to full width on hover */
 }
 
 
@@ -90,19 +94,28 @@ body {
 }
 
 .cards-container {
+
     display: flex;
     justify-content: space-between;
+    height: 50%;
     width: 80%;
     gap: 30px;
 }
 
 .card {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center content */
+    align-items: center;
+    /* Vertically center content */
     background-color: white;
     width: 45%;
+    height: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
+    border-radius: 50px;
 }
 
 .card:hover {
@@ -126,6 +139,7 @@ body {
 }
 
 .card-link {
+
     text-decoration: none;
     color: white;
     background-color: rgb(15, 43, 70);

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RC4 Encryption</title>
+    <title>Chiffrement RC4</title>
     <link rel="stylesheet" href="rc4.css">
 </head>
 <body>
@@ -18,38 +18,35 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
-        <h1>RC4 algorithm</h1>
+        <h1>Algorithme RC4</h1>
 
         <div class="cards">
-            <!-- Encryption Card -->
             <div class="card">
-                <h2>Encryption</h2>
-                <label for="key">Key:</label>
-                <input  type="text" id="key" placeholder="Enter encryption key">
+                <h2>Chiffrement</h2>
+                <label for="key">Clé :</label>
+                <input type="text" id="key" placeholder="Entrez la clé de chiffrement">
 
-                <label for="plaintext">Plain Text:</label>
-                <textarea  id="plaintext" placeholder="Enter text to encrypt"></textarea>
+                <label for="plaintext">Texte clair :</label>
+                <textarea id="plaintext" placeholder="Entrez le texte à chiffrer"></textarea>
 
-                <button onclick="encrypt()">Encrypt</button>
+                <button onclick="encrypt()">Chiffrer</button>
 
-                <label for="ciphertext">Encrypted Text:</label>
+                <label for="ciphertext">Texte chiffré :</label>
                 <textarea id="ciphertext" readonly></textarea>
             </div>
 
-            <!-- Decryption Card -->
             <div class="card">
-                <h2>Decryption</h2>
-                <label for="key-decrypt">Key:</label>
-                <input type="text" id="key-decrypt" placeholder="Enter decryption key">
+                <h2>Déchiffrement</h2>
+                <label for="key-decrypt">Clé :</label>
+                <input type="text" id="key-decrypt" placeholder="Entrez la clé de déchiffrement">
 
-                <label for="ciphertext-input">Encrypted Text:</label>
-                <textarea id="ciphertext-input" placeholder="Enter text to decrypt"></textarea>
+                <label for="ciphertext-input">Texte chiffré :</label>
+                <textarea id="ciphertext-input" placeholder="Entrez le texte à déchiffrer"></textarea>
 
-                <button onclick="decrypt()">Decrypt</button>
+                <button onclick="decrypt()">Déchiffrer</button>
 
-                <label for="decryptedText">Decrypted Text:</label>
+                <label for="decryptedText">Texte déchiffré :</label>
                 <textarea id="decryptedText" readonly></textarea>
             </div>
         </div>

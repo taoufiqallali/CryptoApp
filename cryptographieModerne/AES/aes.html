@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AES Encryption & Decryption</title>
+    <title>Chiffrement et Déchiffrement AES</title>
     <link rel="stylesheet" href="aes.css">
     <script defer src="aes.js"></script>
 </head>
@@ -12,44 +12,41 @@
     <nav class="myNav">
         <div class="logo"><a href="../../index.html">CryptoApp</a></div>
         <ul>
-            <li class="no-style"><a href="./rc4.html">RC4</a></li>
-            <li class="no-style"><a href="../AES/aes.html">AES</a></li>
+            <li class="no-style"><a href="../Rc4/rc4.html">RC4</a></li>
+            <li class="no-style"><a href="./aes.html">AES</a></li>
             <li class="no-style"><a href="../DES/des.html">DES</a></li>
             <li class="no-style"><a href="../RSA/rsa.html">RSA</a></li>
         </ul>
     </nav>
 
-    <!-- Main Container -->
     <div class="container">
-        <h2>AES Encryption & Decryption</h2>
+        <h2>Chiffrement et Déchiffrement AES</h2>
         <div class="cards">
-            <!-- Encryption Card -->
             <div class="card">
-                <h3>Encryption</h3>
-                <label for="aesKey">Enter Key (16, 24, 32 chars):</label>
+                <h3>Chiffrement</h3>
+                <label for="aesKey">Entrez la clé :</label>
                 <input type="text" id="aesKey">
 
-                <label for="plainText">Enter Text:</label>
+                <label for="plainText">Entrez le texte :</label>
                 <textarea id="plainText"></textarea>
 
-                <button onclick="encryptAES()">Encrypt</button>
+                <button onclick="encryptAES()">Chiffrer</button>
 
-                <label for="cipherText">Encrypted Text:</label>
+                <label for="cipherText">Texte chiffré :</label>
                 <textarea id="cipherText" readonly></textarea>
             </div>
 
-            <!-- Decryption Card -->
             <div class="card">
-                <h3>Decryption</h3>
-                <label for="decryptKey">Enter Key:</label>
+                <h3>Déchiffrement</h3>
+                <label for="decryptKey">Entrez la clé :</label>
                 <input type="text" id="decryptKey">
 
-                <label for="cipherInput">Enter Encrypted Text:</label>
+                <label for="cipherInput">Entrez le texte chiffré :</label>
                 <textarea id="cipherInput"></textarea>
 
-                <button onclick="decryptAES()">Decrypt</button>
+                <button onclick="decryptAES()">Déchiffrer</button>
 
-                <label for="decryptedText">Decrypted Text:</label>
+                <label for="decryptedText">Texte déchiffré :</label>
                 <textarea id="decryptedText" readonly></textarea>
             </div>
         </div>

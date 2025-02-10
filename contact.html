@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="myNav">
+        <div class="logo"><a href="index.html">CryptoApp</a></div>
+        <ul>
+            <li class="no-style"><a href="about.html">À propos</a></li>
+            <li class="no-style"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="cards-container">
+            <div class="card_about">
+                <div class="card-content">
+                    <p>If you are not redirected, <a href="mailto:example@example.com?subject=Hello&body=Your message here">click here</a> to send an email.</p>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            window.location.href = "mailto:example@example.com?subject=Hello&body=Your message here";
+        };
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

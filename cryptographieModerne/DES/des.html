@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DES Encryption & Decryption</title>
+    <title>Chiffrement et Déchiffrement DES</title>
     <link rel="stylesheet" href="des.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="myNav">
         <div class="logo"><a href="../../index.html">CryptoApp</a></div>
         <ul>
@@ -18,42 +17,40 @@
         </ul>
     </nav>
 
-    <!-- Main content -->
     <div class="container">
-        <h1>DES Encryption & Decryption</h1>
+        <h1>Chiffrement et Déchiffrement DES</h1>
         <div class="cards">
-            <!-- Encryption Card -->
             <div class="card">
-                <h3>Encrypt Text</h3>
-                <label for="plainText">Plain Text:</label>
+                <h3>Chiffrer le texte</h3>
+                <label for="plainText">Texte clair :</label>
                 <textarea id="plainText" rows="5"></textarea>
 
-                <label for="key">Key:</label>
+                <label for="key">Clé :</label>
                 <input type="text" id="key" maxlength="8">
 
-                <button onclick="encrypt()">Encrypt</button>
+                <button onclick="encrypt()">Chiffrer</button>
 
-                <label for="encryptedText">Encrypted Text:</label>
+                <label for="encryptedText">Texte chiffré :</label>
                 <textarea id="encryptedText" rows="5" readonly></textarea>
             </div>
 
-            <!-- Decryption Card -->
             <div class="card">
-                <h3>Decrypt Text</h3>
-                <label for="encryptedInput">Encrypted Text:</label>
+                <h3>Déchiffrer le texte</h3>
+                <label for="encryptedInput">Texte chiffré :</label>
                 <textarea id="encryptedInput" rows="5"></textarea>
 
-                <label for="decryptionKey">Key:</label>
+                <label for="decryptionKey">Clé :</label>
                 <input type="text" id="decryptionKey" maxlength="8">
 
-                <button onclick="decrypt()">Decrypt</button>
+                <button onclick="decrypt()">Déchiffrer</button>
 
-                <label for="decryptedText">Decrypted Text:</label>
+                <label for="decryptedText">Texte déchiffré :</label>
                 <textarea id="decryptedText" rows="5" readonly></textarea>
             </div>
         </div>
     </div>
 
-    <script src="bit-array.js"></script>  <script src="des.js"></script>  
+    <script src="bit-array.js"></script>
+    <script src="des.js"></script>
 </body>
 </html>

@@ -183,7 +183,7 @@ function caesarCipher(text, shift) {
 function caesarBruteForce(text) {
     let result = "";
     for (i = 0; i < 26; i++) {
-        result = result + "k = " + i + "   " + caesarDecrypt(text, i) + " <br> ";
+        result = result + "k = " + i + " -->  " + caesarDecrypt(text, i) + " <br> ";
     }
     return result;
 }
@@ -345,7 +345,7 @@ function multiplication(text, key) {
             }
         }
     } else {
-        showError("key is not inversible in Z 26");
+        showError("la clé n'est pas inversible dans Z 26");
         return;
     }
 
@@ -371,7 +371,7 @@ function multiplicationDecrypt(text, key) {
             }
         }
     } else {
-        showError("key is not inversible in Z 26");
+        showError("la clé n'est pas inversible en Z 26");
         return;
     }
 
@@ -383,7 +383,7 @@ function multiplicationBruteForce(text) {
     let result = "";
     for (i = 0; i < 26; i++) {
         if (Number.isInteger(inverseZ26(i))) {
-            result = result + "k = " + i + "   " + multiplicationDecrypt(text, i) + " <br> ";
+            result = result + "k = " + i + " -->  " + multiplicationDecrypt(text, i) + " <br> ";
         }
     }
     return result;
@@ -414,7 +414,7 @@ function affine(text, key_a, key_b) {
         }
         return result;
     } else {
-        showError("a is not inversible in Z 26");
+        showError("a n'est pas inversible en Z 26");
     }
 }
 
@@ -444,7 +444,7 @@ function affineDecrypt(text, key_a, key_b) {
         }
         return result;
     } else {
-        showError("a is not inversible in Z 26");
+        showError("a n'est pas inversible en Z 26");
     }
 }
 
@@ -457,7 +457,7 @@ function affineDecrypt_b(text, key_b) {
 
     for (let i = 1; i < 26; i++) {
         if (Number.isInteger(inverseZ26(i))) {
-            result += ("a = " + i + " ");
+            result += ("a = " + i + " -->  ");
             for (let c of text) {
                 const char = c.toUpperCase();
                 if (alphabet.includes(char)) {
@@ -488,7 +488,7 @@ function affineDecrypt_a(text, key_a) {
 
     for (let i = 1; i < 26; i++) {
         if (Number.isInteger(inverseZ26(key_a))) {
-            result += ("b = " + i + " ");
+            result += ("b = " + i + " : -->  ");
             for (let c of text) {
                 const char = c.toUpperCase();
                 if (alphabet.includes(char)) {
@@ -506,7 +506,7 @@ function affineDecrypt_a(text, key_a) {
             }
             result += " <br> ";
         } else {
-            showError('a is not inversible in Z 26');
+            showError("a n'est pas inversible en Z 26");
         }
     }
     return result;

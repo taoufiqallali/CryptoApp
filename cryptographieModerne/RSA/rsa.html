@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSA Encryption & Decryption</title>
+    <title>Chiffrement et Déchiffrement RSA</title>
     <link rel="stylesheet" href="rsa.css">
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="myNav">
         <div class="logo"><a href="../../index.html">CryptoApp</a></div>
         <ul>
@@ -20,67 +19,62 @@
         </ul>
     </nav>
 
-    <!-- Main content -->
     <div class="container">
-        <h2>RSA Encryption & Decryption</h2>
+        <h2>Chiffrement et Déchiffrement RSA</h2>
         <div class="cards">
-            <!-- Encryption Card -->
             <div class="card">
-                <h3>Encrypt Text</h3>
-                <label for="plainText">Plain Text:</label>
+                <h3>Chiffrer le texte</h3>
+                <label class="no-wrap" for="plainText">Texte clair :</label>
                 <textarea id="plainText" rows="5"></textarea>
 
                 <div class="button-container">
-                    <label for="publickey">Public Key (e): </label>
+                    <label class="no-wrap" for="publickey">Clé publique (e) : </label>
                     <textarea id="publickey" rows="3"></textarea>
-                    <label for="Key_p">Key (n):</label>
+                    <label class="no-wrap"  for="Key_p">Clé (n) :</label>
                     <textarea id="Key_pub" rows="3"></textarea>
                 </div>
 
-                <button onclick="H_encrypt()">Encrypt</button>
+                <button onclick="H_encrypt()">Chiffrer</button>
 
-                <label for="encryptedText">Encrypted Text:</label>
+                <label class="no-wrap" for="encryptedText">Texte chiffré :</label>
                 <textarea id="encryptedText" rows="5" readonly></textarea>
             </div>
 
-            <!-- Decryption Card -->
             <div class="card">
-                <h3>Decrypt Text</h3>
-                <label for="encryptedInput">Encrypted Text:</label>
+                <h3>Déchiffrer le texte</h3>
+                <label class="no-wrap" for="encryptedInput">Texte chiffré :</label>
                 <textarea id="encryptedInput" rows="5"></textarea>
                 <div class="button-container">
-                    <label for="privateKey">Private Key (d):</label>
+                    <label class="no-wrap" for="privateKey">Clé privée (d) :</label>
                     <textarea id="privateKey" rows="3"></textarea>
-                    <label for="Key_pri">Key (n):</label>
+                    <label class="no-wrap" for="Key_pri">Clé (n) :</label>
                     <textarea id="Key_pri" rows="3"></textarea>
                 </div>
-                <button onclick="H_decrypt()">Decrypt</button>
+                <button onclick="H_decrypt()">Déchiffrer</button>
 
-                <label for="decryptedText">Decrypted Text:</label>
+                <label class="no-wrap" for="decryptedText">Texte déchiffré :</label>
                 <textarea id="decryptedText" rows="5" readonly></textarea>
             </div>
 
-            <!-- Key pair generation -->
             <div class="card">
-                <h3>génération de clés</h3>
+                <h3>Génération de clés</h3>
                 <div class="container_K">
                     <div class="top-section">
-                        
-                        <label for="publicKey_G">Public Key (e):</label>
+                        <label class="no-wrap" for="publicKey_G">Clé publique (e) :</label>
                         <textarea id="publicKey_G" readonly></textarea>
 
-                        <label for="privateKey_G">Private Key (d):</label>
+                        <label class="no-wrap" for="privateKey_G">Clé privée (d) :</label>
                         <textarea id="privateKey_G" readonly></textarea>
 
                     </div>
 
                     <div class="bottom-section">
-                        <label for="key_G">Key (n):</label>
+                        <label class="no-wrap" for="key_G">Clé (n) :</label>
                         <textarea id="key_G" readonly></textarea>
                     </div>
                     <div class="button-container">
-                        <button id="generateKey" onclick="Generate_keys()">Generate Key</button>
-                        <button id="copy" onclick="copy_keys()">Copy</button>
+                        <button id="generateKey" onclick="Generate_keys()">Générer les clés</button>
+                        <button id="copy" onclick="copy_keys()">Copier</button>
                     </div>
                 </div>
             </div>
